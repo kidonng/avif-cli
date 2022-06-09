@@ -5,13 +5,8 @@ const { constants } = require("fs");
 const {
   input,
   output,
-  lossless,
-  quality,
-  speed,
-  chromaSubsampling,
-  overwrite,
-  appendExt,
   verbose,
+  ...options
 } = require("../lib/cli");
 const glob = require("../lib/glob");
 const convert = require("../lib/convert");
@@ -33,13 +28,8 @@ const avif = async () => {
       convert({
         input: file,
         output,
-        lossless,
-        quality,
-        speed,
-        chromaSubsampling,
-        overwrite,
-        appendExt,
         verbose,
+        ...options,
       })
     )
   );
